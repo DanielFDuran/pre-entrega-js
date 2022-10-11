@@ -102,7 +102,7 @@ listaDestino.forEach((destino)=> {
     console.log(`Su destino es ${destino.nombre} y su precio es ${destino.precio} USDT`)
 })
  
-let buscarPorPrecio = listaDestino.filter(destino => destino.precio > 30);
+let buscarPorPrecio = listaDestino.filter(destino => destino.precio > 10);
 
 console.log(buscarPorPrecio)
 
@@ -121,6 +121,12 @@ const crearDestino = ()=> {
 
     const destinoNuevo = new Nuevo(nombreDestino,precioDestino);
     console.log(destinoNuevo);
+    listaDestino.push(destinoNuevo);
     return destinoNuevo;
+    
 }
-crearDestino()
+crearDestino();
+
+for (const nuevo of listaDestino) {
+    console.log(`Su destino es ${nuevo.nombre} y su precio es ${nuevo.precio} USDT`)
+}
